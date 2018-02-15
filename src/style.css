@@ -1,0 +1,10 @@
+ul{
+    list-style-type: none;
+}
+
+.clearCompleted:hover
+{
+    color:red;
+    text-decoration: underline;
+    cursor: pointer;
+}

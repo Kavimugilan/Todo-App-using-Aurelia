@@ -1,0 +1,29 @@
+<template>
+  <h1>${heading}</h1>
+
+  <form submit.trigger="addTodo()">
+    <input type="text" value.bind="todoDescription">
+  </form>
+
+  <ul>
+    <li repeat.for="todo of todos">
+      <input type="checkbox" checked.bind="todo.done" change.trigger="UpdateaTask(todo)">
+      <span contenteditable="true" css="text-decoration: ${todo.done ? 'line-through' : 'none'}">
+        ${todo.description}
+      </span>
+
+      <button click.trigger="removeTodo(todo)">Remove</button>
+    </li>
+  </ul>
+
+  <div>
+    <span class='count'> ${todos.length} Items Left</span>
+    <span class='clearCompleted' click.trigger="clearCompleted()">Clear Completed</span>
+  </div>
+
+  <div>
+    <button click.trigger="createTask()">Create Task</button>
+    <button click.trigger="DeleteAllTask()">DeleteAllTask</button>
+    <button click.trigger="GetTasks()">Get Tasks</button>
+  </div>
+</template>
